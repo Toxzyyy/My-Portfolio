@@ -66,6 +66,22 @@ header {
   border-bottom: 1px solid var(--border);
 }
 
+.animated-name {
+  text-shadow:
+    0 0 5px #38bdf8,
+    0 0 10px #a855f7,
+    0 0 20px #ec4899,
+    0 0 40px #22c55e;
+  animation: gradientMove 3s ease infinite, glowPulse 2s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% { text-shadow: 0 0 5px #38bdf8, 0 0 10px #a855f7, 0 0 20px #ec4899, 0 0 40px #22c55e; }
+  50% { text-shadow: 0 0 10px #38bdf8, 0 0 20px #a855f7, 0 0 30px #ec4899, 0 0 50px #22c55e; }
+}
+
+
+
 .nav {
   display: flex;
   align-items: center;
@@ -245,45 +261,77 @@ section {
   background: var(--bg-soft);
 }
 
-/* ====== Skills ====== */
+/* ===== SKILLS ===== */
 .skills {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
+  gap: 20px;
 }
 
 .skill {
-  display: grid;
-  grid-template-columns: 140px 1fr;
-  align-items: center;
-  gap: 12px;
-}
-
-.bar {
-  height: 10px;
-  border-radius: 999px;
-  background: #1b2444;
+  padding: 16px;
+  border-radius: 14px;
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  transition: 0.3s;
+  position: relative;
   overflow: hidden;
-  border: 1px solid var(--border);
 }
 
-.bar>i {
+.skill:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+/* ICON */
+.skill .icon {
+  font-size: 28px;
+  margin-bottom: 8px;
+  display: inline-block;
+  animation: float 2.5s ease-in-out infinite;
+}
+
+/* Skill bar */
+.bar {
+  height: 8px;
+  background: #1e293b;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.bar i {
   display: block;
   height: 100%;
-  width: 0;
-  background: linear-gradient(90deg, var(--brand), var(--brand-2));
+  border-radius: 10px;
+  animation: load 1.5s ease forwards;
 }
 
-/* Skill bar animation */
-.bar>i.animate {
-  animation: fillBar 1.5s ease-out forwards;
+/* ===== GLOW COLORS ===== */
+.html i { background: linear-gradient(90deg,#ff7a18,#ffb347); }
+.js i { background: linear-gradient(90deg,#facc15,#fde047); }
+.cpp i { background: linear-gradient(90deg,#38bdf8,#0ea5e9); }
+.python i { background: linear-gradient(90deg,#22c55e,#4ade80); }
+.design i { background: linear-gradient(90deg,#a855f7,#ec4899); }
+
+.glow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  filter: blur(20px);
+  opacity: 0.25;
+  z-index: -1;
 }
 
-@keyframes fillBar {
-  from {
-    width: 0;
-  }
+/* ===== ANIMATIONS ===== */
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
 }
+
+@keyframes load {
+  from { width: 0; }
+}
+
 
 /* ====== Projects ====== */
 .project {
