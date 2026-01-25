@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Myself • Personal Portfolio</title>
+  <meta name="description" content="A clean personal portfolio template in a single HTML file (HTML + CSS + JS)." />
+  <link rel="icon" href="data:image/svg+xml,%F0%9F%8C%9F" />
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="javascript.js"></script>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">Me</div>
+        <span>Myself • Portfolio</span>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" id="home">
+      <div>
+        <span class="tagline">សួស្តី • Hello!</span>
+        <h1>I'm <span style="background:linear-gradient(90deg,var(--brand),var(--brand-2)); -webkit-background-clip:text; background-clip:text; color:transparent;">Thorn Thorin</span> —
+          a student & web enthusiast.</h1>
+        <p class="lead">I enjoy building clean, fast, and friendly websites. I also love problem solving, design, and sharing knowledge. (ខ្ញុំចូលចិត្តបង្កើតវេបសាយស្អាត និងឆាប់រហ័ស។)</p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+          <a class="btn primary" href="#projects">View my work</a>
+          <a class="btn" href="#contact">Hire / Contact me</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="avatar">
+          <img src="photo_2025-06-26_18-13-32.jpg" alt="My avatar" />
+        </div>
+        <div class="quick">
+          <div class="chip">📍 Battam Bang, KH</div>
+          <div class="chip">🎓 Student</div>
+          <div class="chip">💬 English • Khmer</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2 class="section-title">About me</h2>
+      <p class="section-sub">Introduce yourself in a few lines. Swap in Khmer if you prefer.</p>
+      <div class="grid cols-2 about">
+        <div class="card">
+          <p>
+            Hello, I'm <strong>Thorn Thorin</strong>. I'm passionate about technology and creativity. I like to learn new things every day and turn ideas into useful projects. Outside of coding, I enjoy music, play game, and photography.
+          </p>
+        </div>
+        <div class="facts">
+          <div class="fact"><strong>Age:</strong> 18</div>
+          <div class="fact"><strong>Email:</strong> rintzy132@gmail.com</div>
+          <div class="fact"><strong>Phone:</strong> +855 888 028 627</div>
+          <div class="fact"><strong>Focus:</strong> Frontend, C++, HTML, CSS</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 class="section-title">Skills</h2>
+      <p class="section-sub">Update the bars to match your level.</p>
+      <div class="card">
+        <div class="skills" id="skillsList">
+          <div class="skill"><b>HTML / CSS</b><div class="bar"><i data-width="20%"></i></div></div>
+          <div class="skill"><b>JavaScript</b><div class="bar"><i data-width="5%"></i></div></div>
+          <div class="skill"><b>C++</b><div class="bar"><i data-width="30%"></i></div></div>
+          <div class="skill"><b>Python</b><div class="bar"><i data-width="10%"></i></div></div>
+          <div class="skill"><b>Design</b><div class="bar"><i data-width="60%"></i></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">Projects</h2>
+      <p class="section-sub">A few things I'm proud of.</p>
+      <div class="grid cols-3">
+        <article class="card project">
+          <img src="https://picsum.photos/seed/p1/640/360" alt="Project 1" style="border-radius:12px; border:1px solid var(--border);" />
+          <div>
+            <h3>Portfolio Website</h3>
+            <p class="section-sub">A responsive, fast personal site built with vanilla HTML/CSS/JS.</p>
+            <div class="tags">
+              <span class="tag">#html</span><span class="tag">#css</span><span class="tag">#javascript</span>
+            </div>
+          </div>
+        </article>
+        <article class="card project">
+          <img src="https://picsum.photos/seed/p2/640/360" alt="Project 2" style="border-radius:12px; border:1px solid var(--border);" />
+          <div>
+            <h3>Kla Klok Game (C++)</h3>
+            <p class="section-sub">Terminal game practicing logic and randomization.</p>
+            <div class="tags">
+              <span class="tag">#c++</span><span class="tag">#algorithms</span>
+            </div>
+          </div>
+        </article>
+        <article class="card project">
+          <img src="https://picsum.photos/seed/p3/640/360" alt="Project 3" style="border-radius:12px; border:1px solid var(--border);" />
+          <div>
+            <h3>Graphic Design</h3>
+            <p class="section-sub">Scripts and docs to fix common Minecraft server issues.</p>
+            <div class="tags">
+              <span class="tag">#photoshop</span><span class="tag">#devops</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-sub">Send me a message.</p>
+      <div class="grid cols-2">
+        <div class="card">
+          <form id="contactForm">
+            <input type="text" id="name" placeholder="Your name" required />
+            <input type="email" id="email" placeholder="Your email" required />
+            <textarea id="message" placeholder="Your message" required></textarea>
+            <button class="btn primary" type="submit">Send Message</button>
+          </form>
+        </div>
+        <div class="card">
+        <p><i class="fa-solid fa-envelope"></i> <strong>Email:</strong> rintzy132@gmail.com</p>
+        <p><i class="fa-brands fa-telegram"></i> <strong>Telegram:</strong> @rinxyyy</p>
+        <p><i class="fa-brands fa-facebook"></i> <strong>Facebook:</strong> fb.me/Bro Rin Freefire</p>
+        <p class="section-sub">I'll get back to you soon. Thanks!</p>
+      </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div style="display:flex; align-items:center; gap:12px; justify-content:space-between; flex-wrap:wrap;">
+        <div style="display:flex; gap:10px;">
+          <a href="#home" class="btn">Back to top ⤴</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

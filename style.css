@@ -1,0 +1,378 @@
+/* ====== Base, Theme & Utilities ====== */
+:root {
+  --bg: #0b1020;
+  --bg-soft: #121a33;
+  --text: #eaf1ff;
+  --text-dim: #b7c0d9;
+  --brand: #6c8bff;
+  --brand-2: #46e6b0;
+  --card: #0f162b;
+  --border: #243057;
+  --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+  --radius: 18px;
+}
+
+:root.light {
+  --bg: #f6f8ff;
+  --bg-soft: #ffffff;
+  --text: #0d1224;
+  --text-dim: #516180;
+  --brand: #3b5bff;
+  --brand-2: #0dbd8b;
+  --card: #ffffff;
+  --border: #e6ebff;
+  --shadow: 0 10px 30px rgba(9, 22, 74, .08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Khmer OS Content", "Khmer OS", "Noto Sans Khmer", Arial, sans-serif;
+  color: var(--text);
+  background: radial-gradient(1200px 800px at 80% -10%, rgba(108, 139, 255, .15), transparent 60%),
+    radial-gradient(1000px 600px at 10% 10%, rgba(70, 230, 176, .12), transparent 60%), var(--bg);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+/* ====== Header / Nav ====== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: saturate(180%) blur(12px);
+  background: linear-gradient(180deg, rgba(10, 15, 31, .85), rgba(10, 15, 31, .6));
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+}
+
+.brand {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-weight: 700;
+}
+
+.logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(145deg, var(--brand), var(--brand-2));
+  color: #fff;
+  box-shadow: var(--shadow);
+  font-weight: 800;
+}
+
+.nav a {
+  opacity: .9;
+  margin-left: 18px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+
+.nav a:hover {
+  border-color: var(--border);
+  background: rgba(255, 255, 255, .04);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn {
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--bg-soft);
+  color: var(--text);
+  box-shadow: var(--shadow);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+/* ====== Hero ====== */
+.hero {
+  display: grid;
+  gap: 28px;
+  grid-template-columns: 1.2fr .8fr;
+  align-items: center;
+  padding: 52px 0 24px;
+}
+
+.hero h1 {
+  font-size: clamp(28px, 3.6vw, 48px);
+  line-height: 1.15;
+  margin: 0 0 10px;
+}
+
+.hero p.lead {
+  font-size: clamp(16px, 2vw, 20px);
+  color: var(--text-dim);
+  margin: 0 0 18px;
+}
+
+.tagline {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(108, 139, 255, .18);
+  border: 1px solid var(--border);
+  font-weight: 600;
+  letter-spacing: .2px;
+}
+
+.hero-card {
+  background: linear-gradient(180deg, rgba(108, 139, 255, .12), rgba(0, 0, 0, 0));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+
+.avatar {
+  width: 180px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--border);
+  box-shadow: var(--shadow);
+  margin-inline: auto;
+}
+
+.quick {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.quick .chip {
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: 12px;
+  padding: 10px 12px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* ====== Sections ====== */
+section {
+  padding: 44px 0;
+}
+
+.section-title {
+  font-size: 26px;
+  margin: 0 0 12px;
+}
+
+.section-sub {
+  color: var(--text-dim);
+  margin-top: -6px;
+}
+
+/* ====== Cards, Grids ====== */
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+.grid.cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid.cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+
+/* ====== About ====== */
+.about p {
+  margin: 0;
+  color: var(--text-dim);
+}
+
+.facts {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 16px;
+}
+
+.fact {
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-soft);
+}
+
+/* ====== Skills ====== */
+.skills {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.skill {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  align-items: center;
+  gap: 12px;
+}
+
+.bar {
+  height: 10px;
+  border-radius: 999px;
+  background: #1b2444;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.bar>i {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--brand), var(--brand-2));
+}
+
+/* Skill bar animation */
+.bar>i.animate {
+  animation: fillBar 1.5s ease-out forwards;
+}
+
+@keyframes fillBar {
+  from {
+    width: 0;
+  }
+}
+
+/* ====== Projects ====== */
+.project {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr;
+}
+
+.project h3 {
+  margin: 4px 0;
+}
+
+.project .tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, .03);
+  color: var(--text-dim);
+}
+
+/* ====== Contact ====== */
+form {
+  display: grid;
+  gap: 12px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font: inherit;
+  color: var(--text);
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  outline: none;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.btn.primary {
+  background: linear-gradient(145deg, var(--brand), var(--brand-2));
+  color: #0b0f1f;
+  font-weight: 700;
+  border: none;
+}
+
+/* ====== Footer ====== */
+footer {
+  border-top: 1px solid var(--border);
+  color: var(--text-dim);
+  padding: 16px 0 40px;
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .grid.cols-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid.cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .quick {
+    grid-template-columns: 1fr;
+  }
+
+  .grid.cols-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .skill {
+    grid-template-columns: 1fr;
+  }
+}
